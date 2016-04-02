@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var panGesture: UIPanGestureRecognizer!
+    @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +23,11 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func onLike(sender: AnyObject) {
+    }
 
+    @IBAction func onCancel(sender: AnyObject) {
+    }
+   
 }
 
