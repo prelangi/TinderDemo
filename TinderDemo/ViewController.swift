@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     
+    @IBOutlet weak var draggableView: DraggableView!
+    
     //For pan gesture handling
     var originalCenter: CGPoint!
     var originalTransform: CGAffineTransform!
@@ -23,6 +25,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
+        originalCenter = profileImageView.center
         originalTransform = profileImageView.transform
     }
 
@@ -60,7 +63,7 @@ class ViewController: UIViewController {
             self.profileImageView.transform = CGAffineTransformRotate(originalTransform, angle)
         }
         else if sender.state == UIGestureRecognizerState.Ended {
-            if translation.x > 50 || translation.x < -50 {
+            if translation.x > 100 || translation.x < -100 {
                 self.profileImageView.hidden = true
             }
             else {
@@ -74,11 +77,31 @@ class ViewController: UIViewController {
     
     @IBAction func onLike(sender: AnyObject) {
         
+        UIView.animateWithDuration(1.0, animations: { () -> Void in
+            self.profileImageView.center = CGPoint(x: self.originalCenter.x+250, y: self.originalCenter.y)
+            let angle =  CGFloat(45 * M_PI/180)
+            self.profileImageView.transform = CGAffineTransformRotate(self.originalTransform, angle)
+            
+            }) { (finished:Bool) -> Void in
+                if finished == true {
+                    self.profileImageView.hidden = true
+                }
+                
+                
+        }
+        
+        
+        
+        
+        
         
     
     }
 
     @IBAction func onCancel(sender: AnyObject) {
+        profileImageView.center = originalCenter
+        profileImageView.transform = originalTransform
+        profileImageView.hidden = false
     
     }
    
