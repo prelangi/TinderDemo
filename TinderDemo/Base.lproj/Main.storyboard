@@ -14,42 +14,84 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6ym-1y-Icw">
-                                <rect key="frame" x="40" y="135" width="240" height="249"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="mU1-hx-mXa" appends="YES" id="cP9-uZ-Ioo"/>
-                                </connections>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jxf-S9-41y">
-                                <rect key="frame" x="186" y="440" width="50" height="50"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sw2-v9-gyT" customClass="DraggableView" customModule="TinderDemo" customModuleProvider="target">
+                                <rect key="frame" x="47" y="114" width="320" height="320"/>
+                                <subviews>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GClooney-240" translatesAutoresizingMaskIntoConstraints="NO" id="6ym-1y-Icw">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="Bix-kl-7st"/>
+                                            <constraint firstAttribute="height" constant="320" id="rdi-rq-VvA"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="mU1-hx-mXa" appends="YES" id="cP9-uZ-Ioo"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="6ym-1y-Icw" secondAttribute="trailing" id="6UT-8d-16W"/>
+                                    <constraint firstAttribute="width" constant="320" id="AAy-Sz-Nnc"/>
+                                    <constraint firstItem="6ym-1y-Icw" firstAttribute="leading" secondItem="sw2-v9-gyT" secondAttribute="leading" id="ImP-Dy-A3P"/>
+                                    <constraint firstAttribute="bottom" secondItem="6ym-1y-Icw" secondAttribute="bottom" id="nt7-sg-FZR"/>
+                                    <constraint firstItem="6ym-1y-Icw" firstAttribute="top" secondItem="sw2-v9-gyT" secondAttribute="top" id="qkR-y6-xvM"/>
+                                    <constraint firstAttribute="height" constant="320" id="ykc-BG-e7f"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jxf-S9-41y">
+                                <rect key="frame" x="242" y="492" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Hwa-Cd-Hfg"/>
+                                    <constraint firstAttribute="height" constant="50" id="ZJa-8t-YQM"/>
+                                </constraints>
                                 <state key="normal" title="Button" image="Like Filled-50"/>
                                 <connections>
                                     <action selector="onLike:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dul-Mg-HL8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mxa-ke-Zeg">
-                                <rect key="frame" x="67" y="440" width="50" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mxa-ke-Zeg">
+                                <rect key="frame" x="112" y="492" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="7oP-5U-Wkg"/>
+                                    <constraint firstAttribute="width" constant="50" id="Q8C-LG-DAk"/>
+                                </constraints>
                                 <state key="normal" title="Button" image="Cancel Filled-50"/>
                                 <connections>
                                     <action selector="onCancel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uxc-Zn-UQb"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="mxa-ke-Zeg" firstAttribute="top" secondItem="sw2-v9-gyT" secondAttribute="bottom" constant="58" id="46u-Gq-1Mn"/>
+                            <constraint firstItem="sw2-v9-gyT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="4Yu-6S-KMu"/>
+                            <constraint firstAttribute="trailing" secondItem="sw2-v9-gyT" secondAttribute="trailing" constant="47" id="HZg-6k-viZ"/>
+                            <constraint firstAttribute="trailing" secondItem="jxf-S9-41y" secondAttribute="trailing" constant="122" id="LtE-Dr-DVV"/>
+                            <constraint firstItem="jxf-S9-41y" firstAttribute="centerY" secondItem="mxa-ke-Zeg" secondAttribute="centerY" id="Q2h-jh-pNH"/>
+                            <constraint firstItem="mxa-ke-Zeg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="112" id="mdx-JY-DR5"/>
+                            <constraint firstItem="sw2-v9-gyT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="47" id="sq5-oI-mu2"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="mxa-ke-Zeg" secondAttribute="bottom" constant="50" id="xda-g5-Pbm"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tinder" id="H5O-zO-k67"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="cancelButton" destination="mxa-ke-Zeg" id="Oxp-19-8Mi"/>
                         <outlet property="likeButton" destination="jxf-S9-41y" id="r89-TD-n9F"/>
                         <outlet property="panGesture" destination="mU1-hx-mXa" id="v0H-wB-zuG"/>
+                        <outlet property="profileImageView" destination="6ym-1y-Icw" id="VHj-lz-46L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="mU1-hx-mXa"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="mU1-hx-mXa">
+                    <connections>
+                        <action selector="onPan:" destination="BYZ-38-t0r" id="B9f-2c-nhY"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="713" y="340"/>
         </scene>
@@ -74,6 +116,7 @@
     </scenes>
     <resources>
         <image name="Cancel Filled-50" width="50" height="50"/>
+        <image name="GClooney-240" width="240" height="240"/>
         <image name="Like Filled-50" width="50" height="50"/>
     </resources>
 </document>
